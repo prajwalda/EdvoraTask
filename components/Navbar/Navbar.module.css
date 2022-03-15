@@ -1,11 +1,11 @@
 
-.main_nav {
+.navbar{
     padding: 0 2.3rem;
     /* background-color: var(--navbar-bg); */
     background-color: black;
 }
 
-._logo {
+.logo {
     max-width: 114px;
 
 }
@@ -16,12 +16,12 @@
     align-items: center;
 }
 
-._logo img {
+.logo img {
     width: 100%;
 }
 
 
-._avatar {
+.avatar {
     display: flex;
     align-items: center;
     width: 44px;
@@ -38,6 +38,6 @@
     color: aliceblue;
 }
 
-._avatar img {
+.avatar img {
     width: 100%;
 }

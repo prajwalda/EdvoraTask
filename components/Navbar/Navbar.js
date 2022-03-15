@@ -1,32 +1,30 @@
 import Image from 'next/image';
 import styles from './Navbar.module.css';
-import logo from '../../assets/logo.svg';
-import avatar from '../../assets/avatar.png'
-//import { useStore } from '../../Context/Store';
+import logoImg from '../../assets/logo.svg';
+import profile from '../../assets/avatar.png'
+import { useApi } from '../../Context/Apihandle';
 
 
 export const NavBar = ({}) => {
 
-    // style classes
-    const { _logo,uname,_avatar, row, main_nav } = styles;
+    // style variables
+    const { logo,uname,avatar,row,navbar } = styles;
     //const { user } = useStore();
-    
+    const { user } = useApi();
     return (
-        <nav className = { main_nav } >
+        <nav className = { navbar } >
             <div className = "--container">
                 <div className = { row }>
                     
-                    <div className = { _logo } >
-                        <Image src = { logo } alt = "logo" />
+                    <div className = {logo} >
+                        <Image src = { logoImg} alt = "logo" />
                     </div>
-
-
                      {
                         <div className = { row }>
-                        <p className = { uname } >Dhruv Singh</p>
+                        <p className = { uname } >{ user.name }</p>
 
-                        <div className = { _avatar } >
-                            <Image src ={avatar}alt = "avatar" />
+                        <div className = { avatar } >
+                            <Image src ={profile}alt = "avatar" />
                         </div>
                        </div>
                     } 

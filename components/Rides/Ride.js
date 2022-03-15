@@ -1,6 +1,7 @@
 import Image from 'next/dist/client/image';
 import styles from './Rides.module.css';
-import map from '../../assets/map.png';
+import mapImg from '../../assets/map.png';
+//import { calcDistance } from '../../utils/calDist';
 
 export const Ride = ( props ) => {
 
@@ -14,7 +15,7 @@ export const Ride = ( props ) => {
         station_code
     } = props;
 
-    const { _map, ride, ride_d, val, badges, badge } = styles;
+    const { map, ride, ride_d, val, badges, badge } = styles;
     const d = new Date( date * 1000 );
 
 
@@ -23,13 +24,13 @@ export const Ride = ( props ) => {
     const _time = d.toTimeString().substring(0, 5)
     const txtDate =  `${ _date[2] }th ${ _date[1] } ${ _date[3] } ${ _time }` ;
 
-    
+   // const distance = calcDistance( station_path,  station_code );
 
     return (
         <div className='--container'>
             <div className = { ride }>
-                <div className = { _map }>
-                    <Image src = { map } alt = "map"/>
+                <div className = { map }>
+                    <Image src = { mapImg } alt = "map"/>
                 </div>
 
                 <div className = { ride_d }>
@@ -67,10 +68,10 @@ export const Ride = ( props ) => {
                     
                     <p>
                         Distance: {" "}
-                        <span 
+                        {/* <span 
                         className = { val }>
-                            distance 
-                        </span>
+                            { distance }
+                        </span> */}
                     </p>
                 </div>
 
