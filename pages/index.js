@@ -1,8 +1,7 @@
 import { NavBar } from "../components/Navbar/Navbar";
 import { Filters } from "../components/Filters/Filters";
 import { Rides } from "../components/Rides/Rides";
-import React, { useState, useEffect } from 'react';
-import ApiProvider from "../Context/Apihandle";
+
 
 
 export default function Home() {

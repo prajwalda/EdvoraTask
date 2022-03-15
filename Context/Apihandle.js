@@ -7,39 +7,42 @@ export const useApi = () => useContext( ApiContext );
 
 function ApiProvider({ children }) {
     
-    // const [ user, setUser ] = useState({});
-    // const [ ride, setRide ] = useState([]); 
-    // const [ filters, setFilters ] = useState({ state:"", city: "" });
-    // const [ status, setStatus ] = useState(""); // upcoming, past
-    // const url="https://assessment.api.vweb.app/user";
-    // useEffect(() => {
-    //     const loadData= async ()=> {
-    //        const respUser= await axios.get(url);
-    //        const respRide= await axios(`https://assessment.api.vweb.app/rides`);
-    //        setUser( respUser.user);
-    //        setRide( respRide.ride );
-                
-    //     };
-    //     loadData();
-    // }, [ setUser, setRide ]);
-   
     const [ user, setUser ] = useState({});
     const [ ride, setRide ] = useState([]); 
     const [ filters, setFilters ] = useState({ state:"", city: "" });
     const [ status, setStatus ] = useState(""); // upcoming, past
+    // const url="https://assessment.api.vweb.app/user";
+    // const url1="https://assessment.api.vweb.app/rides";
     useEffect(() => {
-          loadData();
+        const loadData= async ()=> {
+             const respUser= await axios('https://assessment.api.vweb.app/user');
+              //const ride = await response.json();
+             const respRide= await axios("https://assessment.api.vweb.app/rides");
+           setUser(respUser.data);
+           setRide(respRide.data);
+                console.log(respRide.data);
+        }
+        loadData();
+        // .catch(console.error);
     }, [ setUser, setRide ]);
-    const loadData= async ()=> {
-        await fetch('./Data.json')
+   
+    // const [ user, setUser ] = useState({});
+    // const [ ride, setRide ] = useState([]); 
+    // const [ filters, setFilters ] = useState({ state:"", city: "" });
+    // const [ status, setStatus ] = useState(""); // upcoming, past
+    // useEffect(() => {
+    //       loadData();
+    // }, [ setUser, setRide ]);
+    // const loadData= async ()=> {
+    //     await fetch('./Data.json')
 
-        .then( response => response.json() )    
-        .then(res => {
-           // console.log(res.user);
-            setUser( res.user );
-            setRide( res.ride );
-        });       
-    };
+    //     .then( response => response.json() )    
+    //     .then(res => {
+    //        // console.log(res.user);
+    //         setUser( res.user );
+    //         setRide( res.ride );
+    //     });       
+    // };
     //  Upcoming ride: It shows all rides which has date in future. 
     //we have to filter the data by applying filter on state and city
     
