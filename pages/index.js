@@ -1,12 +1,36 @@
 import { NavBar } from "../components/Navbar/Navbar";
 import { Filters } from "../components/Filters/Filters";
-import { Ride } from "../components/Rides/Ride";
+import { Rides } from "../components/Rides/Rides";
+import React, { useState, useEffect } from 'react';
+import ApiProvider from "../Context/Apihandle";
+
+
 export default function Home() {
-  return (
+  // const [ user, setUser ] = useState({});
+
+  //   useEffect(()=>{
+  //      loadData();
+  //   },[]);
+  //   const loadData =async()=>{
+  //      await fetch('https://assessment.api.vweb.app/user')
+  //       .then( response => response.json() )
+  //       .then(res => {
+          
+  //         setUser( res.user );
+  //         console.log(user);
+  //     });     
+          
+      
+        
+  //   } 
+   
+   return (
    <>
+    
+   {/* <ApiProvider /> */}
    <NavBar /> 
    <Filters/> 
-   <Ride />
+   <Rides />
    </>
   )
 }

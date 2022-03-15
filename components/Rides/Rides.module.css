@@ -4,45 +4,36 @@
     background-color: #171717;
     position: relative;
     border-radius: 10px;
-    margin-bottom:0rem;
-    color: white;
-    margin: 0 2.2rem;
-} 
+    margin-bottom:1rem;
+    color: rgb(211, 206, 206);
+    margin: 1rem 2.2rem;
 
+} 
 .map {
     max-width: 296px;
     margin-right: 2.75rem;
     border-radius: 5px;
 }
-
-._map img {
-    height: 100%;
-    width: 100%;
-}
 .ride_d{
     padding: 0;
-    margin-top:-15px;
+    /* margin-top:-15px; */
 }
 .ride_d p {
-    padding: 0;
+    padding-bottom: 0.8rem;
+    margin: 0;
     font-size: 0.9rem;
 }
-
 .val {
-   color: white;
-    
+   color: white;   
 }
-
 .ride_d p:last-child {
     margin-bottom: 0;
 }
-
 .badges {
     position: absolute;
     top: 1.75rem;
     right: 1.563rem;
 }
-
 .badges .badge {
     display: inline-block;
     padding: 4px 10px;
@@ -52,13 +43,9 @@
     font-size: 0.75rem;
     text-transform: capitalize;
 }
-
 .badges .badge:first-child {
     margin-right: 1.5rem;
 }
-
-
-
 @media ( max-width: 768px ) {
     .ride {
         flex-wrap: wrap;

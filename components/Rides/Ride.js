@@ -1,7 +1,7 @@
 import Image from 'next/dist/client/image';
 import styles from './Rides.module.css';
-import mapImg from '../../assets/map.png';
-//import { calcDistance } from '../../utils/calDist';
+import mapImg from '../../public/assets/map.png';
+import { calcDistance } from '../../utils/CalcDist';
 
 export const Ride = ( props ) => {
 
@@ -17,17 +17,17 @@ export const Ride = ( props ) => {
 
     const { map, ride, ride_d, val, badges, badge } = styles;
     const d = new Date( date * 1000 );
-
+   // console.log(id);
 
     // time
     const _date = d.toDateString().split(" ");
     const _time = d.toTimeString().substring(0, 5)
     const txtDate =  `${ _date[2] }th ${ _date[1] } ${ _date[3] } ${ _time }` ;
 
-   // const distance = calcDistance( station_path,  station_code );
+    const distance = calcDistance( station_path,  station_code );
 
     return (
-        <div className='--container'>
+        <div className='container'>
             <div className = { ride }>
                 <div className = { map }>
                     <Image src = { mapImg } alt = "map"/>
@@ -52,10 +52,10 @@ export const Ride = ( props ) => {
 
                     <p>
                         station_path : {" "}
-                        {/* <span 
+                        <span 
                         className = { val }>
                             { `[${ station_path.join(", ") }]` }
-                        </span> */}
+                        </span>
                     </p>
 
                     <p>
@@ -68,10 +68,10 @@ export const Ride = ( props ) => {
                     
                     <p>
                         Distance: {" "}
-                        {/* <span 
+                        <span 
                         className = { val }>
                             { distance }
-                        </span> */}
+                        </span>
                     </p>
                 </div>
 

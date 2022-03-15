@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import styles from './Navbar.module.css';
-import logoImg from '../../assets/logo.svg';
-import profile from '../../assets/avatar.png'
+import logoImg from '../../public/assets/logo.svg';
+import profile from '../../public/assets/avatar.png'
 import { useApi } from '../../Context/Apihandle';
 
 
@@ -13,7 +13,7 @@ export const NavBar = ({}) => {
     const { user } = useApi();
     return (
         <nav className = { navbar } >
-            <div className = "--container">
+            <div className = "container">
                 <div className = { row }>
                     
                     <div className = {logo} >
@@ -21,7 +21,7 @@ export const NavBar = ({}) => {
                     </div>
                      {
                         <div className = { row }>
-                        <p className = { uname } >{ user.name }</p>
+                        <p className = { uname } >{user.name}</p>
 
                         <div className = { avatar } >
                             <Image src ={profile}alt = "avatar" />
@@ -35,13 +35,3 @@ export const NavBar = ({}) => {
         </nav>
     );
 }
-// export async function getStaticProps() {
-//     const res = await fetch('https://assessment.api.vweb.app/user')
-//     const data = await res.json()
-//     return {
-//        props: {}
-       
-//     }
-    
-//  }
-//  export default  NavBar

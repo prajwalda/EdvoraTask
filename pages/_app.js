@@ -6,8 +6,5 @@ function MyApp({ Component, pageProps }) {
          <Component {...pageProps} />
     </StoreProvider>
   )
-  
- 
 }
-
 export default MyApp
