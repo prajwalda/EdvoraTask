@@ -1,6 +1,5 @@
-import Image from 'next/dist/client/image';
+//import Image from 'next/dist/client/image';
 import styles from './Rides.module.css';
-import mapImg from '../../public/assets/map.png';
 import { calcDistance } from '../../utils/CalcDist';
 
 export const Ride = ( props ) => {
@@ -16,11 +15,10 @@ export const Ride = ( props ) => {
         
     } = props;
 
-    const { map, ride, ride_d, val, badges, badge } = styles;
+    const { map,map_img, ride, ride_d, val, badges, badge } = styles;
+    //to change date format to json
     const dt = new Date(date);
     var d = new Date(Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours(), dt.getMinutes(), dt.getSeconds(), dt.getMilliseconds()));
-    //console.log(d.getTime());
-  //  console.log(typeof city);
    
     const _date = d.toDateString().split(" ");
 
@@ -33,8 +31,7 @@ export const Ride = ( props ) => {
         <div className='container'>
             <div className = { ride }>
                 <div className = { map }>
-                    <Image src = { mapImg } alt = "map"/>
-                     {/* <img src = { map_url } alt = "map"/> */}
+                    <img src = '../../assets/map.png' alt = "map"/>            
                 </div>
 
                 <div className = { ride_d }>

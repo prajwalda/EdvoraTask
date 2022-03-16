@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import styles from './Navbar.module.css';
 import logoImg from '../../public/assets/logo.svg';
-import profile from '../../public/assets/avatar.png'
 import { useApi } from '../../Context/Apihandle';
 
 
@@ -9,13 +8,11 @@ export const NavBar = ({}) => {
 
     // style variables
     const { logo,uname,avatar,row,navbar } = styles;
-    //const { user } = useStore();
     const { user } = useApi();
     return (
         <nav className = { navbar } >
             <div className = "container">
-                <div className = { row }>
-                    
+                <div className = { row }>                   
                     <div className = {logo} >
                         <Image src = { logoImg} alt = "logo" />
                     </div>
@@ -28,8 +25,6 @@ export const NavBar = ({}) => {
                         </div>
                        </div>
                     } 
-
-
                 </div>
             </div>
         </nav>

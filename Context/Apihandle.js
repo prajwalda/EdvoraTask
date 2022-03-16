@@ -26,39 +26,16 @@ function ApiProvider({ children }) {
              //const test = await respRide.json();
            setUser(respUser.data);
            setRide(respRide.data);
-              //  console.log(respRide.data[0].city);
         }
-        loadData();
-        // .catch(console.error);
-    }, []);
-
-    // const [ user, setUser ] = useState({});
-    // const [ ride, setRide ] = useState([]); 
-    // const [ filters, setFilters ] = useState({ state:"", city: "" });
-    // const [ status, setStatus ] = useState(""); // upcoming, past
-    // useEffect(() => {
-    //       loadData();
-    // }, [ setUser, setRide ]);
-    // const loadData= async ()=> {
-    //     await fetch('./Data.json')
-
-    //     .then( response => response.json() )    
-    //     .then(res => {
-    //        // console.log(res.user);
-    //         setUser( res.user );
-    //         setRide( res.ride );
-    //     });       
-    // };
-
+        loadData()
+        .catch(console.error);
+    }, [])
 
     //  Upcoming ride: It shows all rides which has date in future. 
     //we have to filter the data by applying filter on state and city
-    
     function selectUpcomingRides() {
         const date = new Date();
-        //console.log(date);
         const now = date.getTime();
-        
           
         return ride.filter( obj => {
             const filterState = filters.state ? obj.state === filters.state : !filters.state;
@@ -99,10 +76,7 @@ function ApiProvider({ children }) {
 
     
     /* return Ride by selected ( status ) // upcoming, past and "" ( for all rides )  
-     * Apply the Filter by:
-     *  --- state
-     *  --- city
-     */
+     * Apply the Filter by: state and city*/
 
     const getRides = () => {
 

@@ -3,12 +3,12 @@ import styles from './Filters.module.css';
 import { useApi } from '../../Context/Apihandle';
 
 export const DropDown = ({ setMenu }) => {
-
+    
     const { drop_menu, control } = styles;
     const { filters, handleFilters } = useApi();
 
     useEffect(() => {
-
+        
         function handleCLick( { target } ) {
             const menu = document.getElementsByClassName(drop_menu)[0];
             if( !menu.contains( target ) ) {
@@ -33,7 +33,7 @@ export const DropDown = ({ setMenu }) => {
 
     return (
         <>
-        
+        {/* if the target match with option value then will diplay the ride card else will diplay no result */}
         <ul className = { drop_menu } >
             <li>Filters</li>
             

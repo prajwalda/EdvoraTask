@@ -27,10 +27,10 @@ export const Filters = () => {
     const upcomingCount = selectUpcomingRides().length;
    
     const pastCount = selectPastRides().length;
-    //console.log(pastCount);
+    
     return (
-        <div className='container'>
-            <div className = { fltr_cm  }>
+        <div>
+            <div className = { fltr_cm }>
                 <ul className = { links } >
                     <li 
                     onClick = { () => handleStatus("") }
