@@ -28,3 +28,6 @@
     font-size: 1.25rem;
     color: aliceblue;
 }
+.avatar img {
+    width: 100%;
+}

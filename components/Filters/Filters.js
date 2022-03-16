@@ -25,8 +25,9 @@ export const Filters = () => {
 
     // get rides length
     const upcomingCount = selectUpcomingRides().length;
+   
     const pastCount = selectPastRides().length;
-    
+    //console.log(pastCount);
     return (
         <div className='container'>
             <div className = { fltr_cm  }>

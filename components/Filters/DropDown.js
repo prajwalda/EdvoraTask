@@ -43,8 +43,9 @@ export const DropDown = ({ setMenu }) => {
                 value = { filters.state } 
                 className = { control }>
                     <option value = "">State</option>
-                    <option value = "Washington">Washington</option>
-                    <option value = "California">California</option>
+                    <option value = "Delhi">Delhi</option>
+                    <option value = "Odisha">Odisha</option>
+                    <option value = "Bihar">Bihar</option>
                 </select>
             </li>
             
@@ -54,9 +55,9 @@ export const DropDown = ({ setMenu }) => {
                 value = { filters.city } 
                 className = { control }>
                     <option value = "">City</option>
-                    <option value = "Olympia">Olympia</option>
-                    <option value = "San Francisco">San Francisco</option>
-                    <option value = "Los Angeles">Los Angeles</option>
+                    <option value = "New Delhi">New Delhi</option>
+                    <option value = "Marhaura">Marhaura</option>
+                    <option value = "Brahmapur">Brahmapur</option>
                 </select>
             </li>
         </ul>

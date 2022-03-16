@@ -24,7 +24,7 @@ export const NavBar = ({}) => {
                         <p className = { uname } >{user.name}</p>
 
                         <div className = { avatar } >
-                            <Image src ={profile}alt = "avatar" />
+                            <img src ={user.url} alt = "avatar" />
                         </div>
                        </div>
                     } 

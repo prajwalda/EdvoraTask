@@ -12,15 +12,18 @@ export const Ride = ( props ) => {
         date,
         state,
         city,
-        station_code
+        station_code,
+        
     } = props;
 
     const { map, ride, ride_d, val, badges, badge } = styles;
-    const d = new Date( date * 1000 );
-   // console.log(id);
-
-    // time
+    const dt = new Date(date);
+    var d = new Date(Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDate(), dt.getHours(), dt.getMinutes(), dt.getSeconds(), dt.getMilliseconds()));
+    //console.log(d.getTime());
+  //  console.log(typeof city);
+   
     const _date = d.toDateString().split(" ");
+
     const _time = d.toTimeString().substring(0, 5)
     const txtDate =  `${ _date[2] }th ${ _date[1] } ${ _date[3] } ${ _time }` ;
 
@@ -31,6 +34,7 @@ export const Ride = ( props ) => {
             <div className = { ride }>
                 <div className = { map }>
                     <Image src = { mapImg } alt = "map"/>
+                     {/* <img src = { map_url } alt = "map"/> */}
                 </div>
 
                 <div className = { ride_d }>
