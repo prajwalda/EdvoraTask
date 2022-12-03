@@ -1,0 +1,82 @@
+<html><head>
+    <meta charset="utf-8">
+    <title>icon finder</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app.css">
+
+</head>
+<body>
+    
+    <main>
+        <header class="clearfix">
+            <div class="pull-left">
+                Welcome to Icon world !
+            </div>
+
+            
+        </header>
+
+
+        <div id="canvas" style="background-color: lavender;">
+            <div class="app-frame">
+                
+
+                <div class="app-body" style="background-color: lavender;">
+                    <form id="search" class="clearfix">
+                        <div class="pull-left">
+                            <input type="text" id="query" name="query" placeholder="Search for icons..." autofocus="">
+                            <button type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+
+                      
+
+                        <input type="hidden" name="count" value="100">
+                    </form>
+
+                    <div class="results hide">
+                    </div>      <!-- .results -->
+
+                    <div class="diagram">
+                        <div class="placeholder ui-droppable" id="figure-1">
+                            <div class="ss">Figure 1</div> 
+                            <div class="ss1">Drag and drop here</div>    
+                        </div>
+                        <div class="placeholder ui-droppable" id="figure-2">
+                            <div class="ss">Figure 2</div> 
+                            <div class="ss1">Drag and drop here</div>    
+                        </div>
+                        
+                    </div>
+                </div>      
+            </div>      
+        </div>      
+    </main>
+
+
+    
+
+
+    <button type="button" class="toggle-console"><i class="fa fa-bars"></i></button>
+
+
+    <script type="text/template" id="result-template">
+        <img src="{{ url }}" alt="" width="64" data-icon-id="{{ icon_id }}">
+    </script>
+
+    <script type="text/template" id="log-template">
+        <h4>Request:</h4>
+        <pre>{{ type }} {{ url }}</pre>
+        <h4>Response:</h4>
+        <pre>{{- response }}</pre>
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="app.js"></script>
+    
+
+
+</body></html>
